@@ -3,7 +3,7 @@
 // @author        Ewino
 // @version       1.7.2
 // @description   Enhances fanfiction.net.
-// @icon          https://www.fanfiction.net/static/images/favicon_2010_iphone.png
+// @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     http://userscripts.org/scripts/show/102342
 // @include       http://*.fanfiction.net/*
 // @include       https://*.fanfiction.net/*
