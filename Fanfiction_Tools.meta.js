@@ -9,10 +9,10 @@
 // @include       https://*.fanfiction.net/*
 // @include       http://*.fictionpress.com/*
 // @include       https://*.fictionpress.com/*
-// @require       https://github.com/djfye/Fanfiction_Tools/raw/master/jquery.min.js
-// @require       https://github.com/djfye/Fanfiction_Tools/raw/master/jquery.minicolors.min.js
-// @require       https://github.com/djfye/Fanfiction_Tools/raw/master/jquery.lazyload.min.js
-// @resource      miniColorsCss https://github.com/djfye/Fanfiction_Tools/raw/master/jquery.minicolors.css
+// @require       https://code.jquery.com/jquery-3.2.1.min.js
+// @require       https://cdnjs.cloudflare.com/ajax/libs/jquery-minicolors/2.2.6/jquery.minicolors.min.js
+// @require       https://raw.githubusercontent.com/tuupola/jquery_lazyload/2.x/lazyload.min.js
+// @resource      miniColorsCss https://cdnjs.cloudflare.com/ajax/libs/jquery-minicolors/2.2.6/jquery.minicolors.css
 /* // @updateURL     https://github.com/djfye/Fanfiction_Tools/raw/master/Fanfiction_Tools.meta.js */
 // @downloadURL   https://github.com/djfye/Fanfiction_Tools/raw/master/Fanfiction_Tools.user.js
 // @grant         GM_getValue
