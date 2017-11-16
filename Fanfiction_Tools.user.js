@@ -5,10 +5,8 @@
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     http://userscripts.org/scripts/show/102342
-// @include       http://*.fanfiction.net/*
-// @include       https://*.fanfiction.net/*
-// @include       http://*.fictionpress.com/*
-// @include       https://*.fictionpress.com/*
+// @include       /^https?://(www\.)?fanfiction\.net/.*$/
+// @include       /^https?://(www\.)?fictionpress.com/.*$/
 // @require       https://code.jquery.com/jquery-3.2.1.min.js
 // @require       https://cdnjs.cloudflare.com/ajax/libs/jquery-minicolors/2.2.6/jquery.minicolors.min.js
 // @require       https://github.com/tuupola/jquery_lazyload/raw/2.x/lazyload.min.js
