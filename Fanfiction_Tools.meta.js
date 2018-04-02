@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.2
+// @version       1.7.3
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     http://userscripts.org/scripts/show/102342
@@ -13,10 +13,10 @@
 // @resource      miniColorsCss https://cdnjs.cloudflare.com/ajax/libs/jquery-minicolors/2.2.6/jquery.minicolors.css
 // @updateURL     https://github.com/djfye/Fanfiction_Tools/raw/master/Fanfiction_Tools.meta.js
 // @downloadURL   https://github.com/djfye/Fanfiction_Tools/raw/master/Fanfiction_Tools.user.js
-// @updateVersion 5
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.3 Update url fixes
 // @history       1.7.2 Small fixes for site changes (more time formatting and pages moved to https)
 // @history       1.7 Removed the "no-copy" limitation, Fixed FF.net color problems (extra-contrasted buttons and mismatched backgrounds), adjusted for new date formats (thanks phelougu!), small changes in chapter separators.
 // @history       1.62 Tweaked the autoloading feature a bit. So now it works and is more precise. Also changed the text and buttons color on dark backgrounds
