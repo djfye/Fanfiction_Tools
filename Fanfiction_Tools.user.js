@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.7
+// @version       1.7.71
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     http://userscripts.org/scripts/show/102342
@@ -14,7 +14,8 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
-// @history       1.7.7 Add Dark mode setting
+// @history       1.7.71 Dark Mode changes
+// @history       1.7.7 Add Dark Mode setting
 // @history       1.7.6 Change library urls from cloudflare cdn to jsdeliver cdn to always use latest version. Remove @update and @download urls. Convert @include to @match. Add comment about script changes.
 // @history       1.7.5 Fictionpress url fix
 // @history       1.7.4 Script fixes
@@ -271,6 +272,7 @@ features = {
             '}' +
             '#content_parent,' +
             '.zmenu,' +
+            '.dropdown-menu,' +
             '#top,' +
             '#ffto-menu .tabs > ul {' +
                 'background-color: #333 !important;' +
@@ -282,7 +284,6 @@ features = {
             '}' +
             '.btn,' +
             '#ffto-buttons INPUT[type=button],' +
-            '.dropdown-menu,' +
             '.xdrop_search,' +
             'textarea,' +
             'input[type=text],' +
