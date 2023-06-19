@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.6
+// @version       1.7.7
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     http://userscripts.org/scripts/show/102342
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.7 Add Dark mode setting
 // @history       1.7.6 Change library urls from cloudflare cdn to jsdeliver cdn to always use latest version. Remove @update and @download urls. Convert @include to @match. Add comment about script changes.
 // @history       1.7.5 Fictionpress url fix
 // @history       1.7.4 Script fixes
@@ -60,6 +61,7 @@ var defaultSettings = {
 	blacklistedWords: '',	/** Stories containing these words in summary are removed. [an array of words] */
 	lowWordCount: 0,	/** Stories with lower word count are removed */
 	fixLinks: true,		/** Change fake links to real links. [true/false] */
+	darkMode: false,	/** Enable/disable dark mode. [true/false] */
 	allowCtrlA: true,	/** Allow select all with ctrl-a. [true/false] */
 	filtersFormat: 0,	/** Format of the filters. [0/1/2/3] 0: Default, 1: Always visible (right), 2: Always visible (right, don't follow), 3: Always visible (top) */
 	colorWordCount: true,	/** Color the word counts. [true/false] */
@@ -147,6 +149,10 @@ function load() {
 	    features.fixLinks();
 	}
 
+	if (settings.darkMode) {
+	    features.darkMode();
+	}
+
 	// all selectors
 	var chapterNavigator = utils.getChapterNavigator(), storyTextEl = $('#storytext'), zlists = $('.z-list');
 
@@ -175,7 +181,6 @@ function load() {
 			if (settings.fullStoryLoad) { features.autoLoad.loadFullStory(); }
 			else if (settings.loadAsYouGo) { features.setLoadAsYouGo(); }
 		}
-
 		if (settings.allowCtrlA) {
 			$('head').append('<script>setTimeout(function(){ $(document).unbind("keydown"); }, 500);</script>'); // Allow select all with ctrl-a
 		}
@@ -239,6 +244,87 @@ features = {
 			}
 		)
 	},
+
+    /**
+     * Settings for Dark Mode
+     */
+
+    darkMode: function() {
+        GM_addStyle(
+            '#content_wrapper,' +
+            '#zmenu.maxwidth,' +
+			'#ffto-menu,' +
+            '#ffto-menu .tabs li.active,' +
+			'#ffto-menu SELECT,' +
+            '.tcat,' +
+            '.lc,' +
+            '.lc-left,' +
+            '.lc-wrapper,' +
+            '#ffto-menu-title,' +
+            '#ffto-menu-wrapper {' +
+                'background-color: #222 !important;' +
+                //'background-image: linear-gradient(to bottom, #666, #444) !important;' +
+                'background-repeat: repeat-x !important;' +
+                'border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;' +
+                'color: #FFF !important;' +
+                'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
+            '}' +
+            '#content_parent,' +
+            '.zmenu,' +
+            '#top,' +
+            '#ffto-menu .tabs > ul {' +
+                'background-color: #333 !important;' +
+                //'background-image: linear-gradient(to bottom, #666, #444) !important;' +
+                'background-repeat: repeat-x !important;' +
+                'border-color: #333 !important;' +
+                'color: #FFF !important;' +
+                'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
+            '}' +
+            '.btn,' +
+            '#ffto-buttons INPUT[type=button],' +
+            '.dropdown-menu,' +
+            '.xdrop_search,' +
+            'textarea,' +
+            'input[type=text],' +
+            'input[type=password],' +
+            'input[type=datetime],' +
+            'input[type=datetime-local],' +
+            'input[type=date],' +
+            'input[type=month],' +
+            'input[type=time],' +
+            'input[type=week],' +
+            'input[type=number],' +
+            'input[type=email],' +
+            'input[type=url],' +
+            'input[type=search],' +
+            'input[type=tel],' +
+            'input[type=color],' +
+            '.uneditable-input {' +
+                'background-color: #555 !important;' +
+                'background-image: linear-gradient(to bottom, #666, #444) !important;' +
+                'background-repeat: repeat-x !important;' +
+                'border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;' +
+                'color: #FFF !important;' +
+                'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
+            '}' +
+            '.caret {' +
+                ' border-top: 4px solid #FFF !important;' +
+            '}' +
+            'a,' +
+            'a:link,' +
+            'a:active,' +
+            'a:visited {' +
+                ' color: #005eff !important;' +
+            '}' +
+            '.dropdown-menu>.disabled>a,' +
+            '.dropdown-menu>.disabled>a:hover,' +
+            '.dropdown-menu>.disabled>a:focus,' +
+            '.xgray,' +
+            '.gray {' +
+                ' color:#FFF !important;' +
+            '}'
+        );
+    },
 
     /**
      * Called on theme switch (light/dark) and fixes some design problems (dark links on dark background etc)
@@ -760,6 +846,7 @@ features = {
 			_innerLoad('word_count5');
 			_innerLoad('word_count6');
 			_innerLoad('word_count7');
+			_innerLoad('darkMode');
 			_innerLoad('allowCtrlA');
 			_innerLoad('fixLinks');
 			_innerLoad('lowWordCount');
@@ -826,6 +913,7 @@ features = {
 			_innerSet('word_count5');
 			_innerSet('word_count6');
 			_innerSet('word_count7');
+			_innerSet('darkMode');
 			_innerSet('allowCtrlA');
 			_innerSet('fixLinks');
 			_innerSet('lowWordCount');
@@ -1066,6 +1154,7 @@ features = {
 							'<div class="ffto-title">Misc.</div>' +
 							'<div class="ffto-sect">' +
 								'<ul>' +
+									'<li><input id="ffto-dark-mode" type="checkbox"' + (settings.darkMode ? ' checked="checked"' : '') + '/> <label for="ffto-dark-mode">Enable dark mode</label></li>' +
 									'<li><input id="ffto-allow-ctrl-a" type="checkbox"' + (settings.allowCtrlA ? ' checked="checked"' : '') + '/> <label for="ffto-allow-ctrl-a">Allow select all with ctrl-a</label></li>' +
 									'<li><input id="ffto-fix-links" type="checkbox"' + (settings.fixLinks ? ' checked="checked"' : '') + '/> <label for="ffto-fix-links">Change fake links to real links</label></li>' +
 								'</ul>' +
@@ -1170,6 +1259,7 @@ features = {
 			settings.word_count5 = $('#ffto-words-t5').val();
 			settings.word_count6 = $('#ffto-words-t6').val();
 			settings.word_count7 = $('#ffto-words-t7').val();
+			settings.darkMode = $('#ffto-dark-mode')[0].checked;
 			settings.allowCtrlA = $('#ffto-allow-ctrl-a')[0].checked;
 			settings.fixLinks = $('#ffto-fix-links')[0].checked;
 			settings.lowWordCount = $('#ffto-low-word-count').val();
