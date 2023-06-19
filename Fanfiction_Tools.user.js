@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.71
+// @version       1.7.72
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
-// @namespace     http://userscripts.org/scripts/show/102342
+// @namespace     https://github.com/djfye/Fanfiction_Tools
 // @match         *://www.fanfiction.net/*
 // @match         *://www.fictionpress.com/*
 // @require       https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.72 More Dark Mode changes. Change @namespace url.
 // @history       1.7.71 Dark Mode changes
 // @history       1.7.7 Add Dark Mode setting
 // @history       1.7.6 Change library urls from cloudflare cdn to jsdeliver cdn to always use latest version. Remove @update and @download urls. Convert @include to @match. Add comment about script changes.
@@ -254,9 +255,10 @@ features = {
         GM_addStyle(
             '#content_wrapper,' +
             '#zmenu.maxwidth,' +
-			'#ffto-menu,' +
+            '#p_footer,' +
+            '#ffto-menu,' +
             '#ffto-menu .tabs li.active,' +
-			'#ffto-menu SELECT,' +
+            '#ffto-menu SELECT,' +
             '.tcat,' +
             '.lc,' +
             '.lc-left,' +
@@ -272,6 +274,7 @@ features = {
             '}' +
             '#content_parent,' +
             '.zmenu,' +
+            'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
             '#top,' +
             '#ffto-menu .tabs > ul {' +
