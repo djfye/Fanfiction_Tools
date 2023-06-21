@@ -329,6 +329,10 @@ features = {
             'a:visited {' +
                 'color: #005eff !important;' +
             '}' +
+            '.topnav li ul li.active a,' +
+            'table.table-hover tr:hover a {' +
+                'color: #FFF !important;' +
+            '}' +
             '.dropdown-menu>.disabled>a,' +
             '.dropdown-menu>.disabled>a:hover,' +
             '.dropdown-menu>.disabled>a:focus,' +
