@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.73
+// @version       1.7.74
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,8 +14,9 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
-// @history       1.7.73 More Dark Mode changes.
-// @history       1.7.72 More Dark Mode changes. Change @namespace url.
+// @history       1.7.74 Testing more Dark Mode changes
+// @history       1.7.73 More Dark Mode changes
+// @history       1.7.72 More Dark Mode changes. Change @namespace url
 // @history       1.7.71 Dark Mode changes
 // @history       1.7.7 Add Dark Mode setting
 // @history       1.7.6 Change library urls from cloudflare cdn to jsdeliver cdn to always use latest version. Remove @update and @download urls. Convert @include to @match. Add comment about script changes.
@@ -271,7 +272,7 @@ features = {
                 'background-color: #222 !important;' +
                 //'background-image: linear-gradient(to bottom, #666, #444) !important;' +
                 'background-repeat: repeat-x !important;' +
-                'border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;' +
+                //'border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;' +
                 'color: #FFF !important;' +
                 'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
             '}' +
