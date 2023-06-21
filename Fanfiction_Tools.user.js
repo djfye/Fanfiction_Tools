@@ -264,6 +264,8 @@ features = {
             '.lc,' +
             '.lc-left,' +
             '.lc-wrapper,' +
+            '.panel_normal,' +
+            '.table-bordered td,' +
             '#ffto-menu-title,' +
             '#ffto-menu-wrapper {' +
                 'background-color: #222 !important;' +
@@ -278,6 +280,7 @@ features = {
             'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
             '#top,' +
+            '.topnav a:hover,' +
             '#ffto-menu .tabs > ul {' +
                 'background-color: #333 !important;' +
                 //'background-image: linear-gradient(to bottom, #666, #444) !important;' +
@@ -304,6 +307,8 @@ features = {
             'input[type=search],' +
             'input[type=tel],' +
             'input[type=color],' +
+            '.topnav li ul li.active,' +
+            'table.table-hover tr:hover,' +
             '.uneditable-input {' +
                 'background-color: #555 !important;' +
                 'background-image: linear-gradient(to bottom, #666, #444) !important;' +
@@ -312,21 +317,24 @@ features = {
                 'color: #FFF !important;' +
                 'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
             '}' +
+            'table.table-hover tr:hover td {' +
+                'background-color: transparent !important;' +
+            '}' +
             '.caret {' +
-                ' border-top: 4px solid #FFF !important;' +
+                'border-top: 4px solid #FFF !important;' +
             '}' +
             'a,' +
             'a:link,' +
             'a:active,' +
             'a:visited {' +
-                ' color: #005eff !important;' +
+                'color: #005eff !important;' +
             '}' +
             '.dropdown-menu>.disabled>a,' +
             '.dropdown-menu>.disabled>a:hover,' +
             '.dropdown-menu>.disabled>a:focus,' +
             '.xgray,' +
             '.gray {' +
-                ' color:#FFF !important;' +
+                'color:#FFF !important;' +
             '}'
         );
     },
