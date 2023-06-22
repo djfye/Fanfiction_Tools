@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.74
+// @version       1.7.745
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.745 Testing more Dark Mode changes
 // @history       1.7.74 Testing more Dark Mode changes
 // @history       1.7.73 More Dark Mode changes
 // @history       1.7.72 More Dark Mode changes. Change @namespace url
@@ -309,6 +310,7 @@ features = {
             'input[type=tel],' +
             'input[type=color],' +
             '.topnav li ul li.active,' +
+            '.dropdown-menu a:hover,' +
             'table.table-hover tr:hover,' +
             '.uneditable-input {' +
                 'background-color: #555 !important;' +
