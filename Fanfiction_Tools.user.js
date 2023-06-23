@@ -261,6 +261,8 @@ features = {
             '#content_wrapper,' +
             '#zmenu.maxwidth,' +
             '#p_footer,' +
+            '#_fontastic_ui,' +
+            '#_fontastic_ui div.modal-footer,' +
             '#ffto-menu,' +
             '#ffto-menu .tabs li.active,' +
             '#ffto-menu SELECT,' +
