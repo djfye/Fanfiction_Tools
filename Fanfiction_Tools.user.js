@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.745
+// @version       1.7.746
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.746 Make Dark Mode hover settings consistent
 // @history       1.7.745 Testing more Dark Mode changes
 // @history       1.7.74 Testing more Dark Mode changes
 // @history       1.7.73 More Dark Mode changes
@@ -282,7 +283,7 @@ features = {
             'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
             '#top,' +
-            '.topnav a:hover,' +
+            '.topnav li ul li.active,' +
             '#ffto-menu .tabs > ul {' +
                 'background-color: #333 !important;' +
                 //'background-image: linear-gradient(to bottom, #666, #444) !important;' +
@@ -309,7 +310,7 @@ features = {
             'input[type=search],' +
             'input[type=tel],' +
             'input[type=color],' +
-            '.topnav li ul li.active,' +
+            '.topnav a:hover,' +
             '.dropdown-menu a:hover,' +
             'table.table-hover tr:hover,' +
             '.uneditable-input {' +
