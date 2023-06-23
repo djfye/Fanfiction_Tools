@@ -341,6 +341,14 @@ features = {
             '.topnav li:last-child {' +
                 'border-bottom: 1px solid #FFF !important;' +
             '}' +
+            '#zmenu.maxwidth {' +
+                'border: 1px solid #FFF !important;' +
+            '}' +
+            '#top,' +
+            '#zmenu.maxwidth {' +
+                'border-bottom: 1px solid #FFF !important;' +
+                'border-top: none !important;' +
+            '}' +
             'a,' +
             'a:link,' +
             'a:active,' +
