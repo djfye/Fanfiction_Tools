@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.75
+// @version       1.7.76
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,10 +14,11 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.76 Version number changes
 // @history       1.7.75 Dark Mode changes. Hide font botton in top bar and add font setting into menu. Will add more fonts eventually
-// @history       1.7.747 Dark Mode color changes
-// @history       1.7.746 Make Dark Mode hover settings consistent
-// @history       1.7.745 Testing more Dark Mode changes
+// @history       1.7.74.7 Dark Mode color changes
+// @history       1.7.74.6 Make Dark Mode hover settings consistent
+// @history       1.7.74.5 Testing more Dark Mode changes
 // @history       1.7.74 Testing more Dark Mode changes
 // @history       1.7.73 More Dark Mode changes
 // @history       1.7.72 More Dark Mode changes. Change @namespace url
@@ -376,7 +377,7 @@ features = {
                 'border-bottom: 1px solid #FFF !important;' +
                 'border-top: none !important;' +
             '}' +
-            '#zmenu.maxwidth {' +
+            '.icon-tl-text {' +
                 'visibility: hidden !important;' +
             '}' +
             'a,' +
