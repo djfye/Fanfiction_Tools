@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.746
+// @version       1.7.747
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.747 Dark Mode color changes
 // @history       1.7.746 Make Dark Mode hover settings consistent
 // @history       1.7.745 Testing more Dark Mode changes
 // @history       1.7.74 Testing more Dark Mode changes
@@ -326,6 +327,19 @@ features = {
             '}' +
             '.caret {' +
                 'border-top: 4px solid #FFF !important;' +
+            '}' +
+            '.topnav li a.underline {' +
+                'border-top: 1px solid #FFF !important;' +
+                'border-left: 1px solid #FFF !important;' +
+            '}' +
+            '.underline {' +
+                'border-top: none !important;' +
+                'border-bottom: none !important;' +
+                'border-right: none !important;' +
+                'border-left: none !important' +
+            '}' +
+            '.topnav li:last-child {' +
+                'border-bottom: 1px solid #FFF !important;' +
             '}' +
             'a,' +
             'a:link,' +
