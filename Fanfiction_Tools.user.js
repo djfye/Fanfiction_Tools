@@ -380,6 +380,9 @@ features = {
             '.icon-tl-text {' +
                 'visibility: hidden !important;' +
             '}' +
+            '.ffto-sect div {' +
+                'padding-top: 5px !important;' +
+            '}' +
             'a,' +
             'a:link,' +
             'a:active,' +
