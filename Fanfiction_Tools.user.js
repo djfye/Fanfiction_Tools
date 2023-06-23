@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.747
+// @version       1.7.75
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.75 Dark Mode changes. Hide font botton in top bar and add font setting into menu. Will add more fonts eventually
 // @history       1.7.747 Dark Mode color changes
 // @history       1.7.746 Make Dark Mode hover settings consistent
 // @history       1.7.745 Testing more Dark Mode changes
@@ -71,6 +72,7 @@ var defaultSettings = {
 	darkMode: false,	/** Enable/disable dark mode. [true/false] */
 	allowCtrlA: true,	/** Allow select all with ctrl-a. [true/false] */
 	filtersFormat: 0,	/** Format of the filters. [0/1/2/3] 0: Default, 1: Always visible (right), 2: Always visible (right, don't follow), 3: Always visible (top) */
+	textFont: 0,		/** Font of text. [0/1/2/3/etc] */
 	colorWordCount: true,	/** Color the word counts. [true/false] */
 	colorDate:  true,	/** Color the dates. [true/false] */
 	colorComplete:  true,	/** Add a unique color to completed stories. [true/false] */
@@ -159,6 +161,29 @@ function load() {
 	if (settings.darkMode) {
 	    features.darkMode();
 	}
+
+	if (settings.textFont === 0) {
+            GM_addStyle(
+                '* {' +
+                    'font-family: Verdana !important;' +
+                    'font-size: 14px !important;' +
+                '}'
+            );
+        } else if (settings.textFont === 1) {
+            GM_addStyle(
+                '* {' +
+                    'font-family: Calibri !important;' +
+                    'font-size: 16px !important;' +
+                '}'
+            );
+        } else if (settings.textFont === 2) {
+            GM_addStyle(
+                '* {' +
+                    'font-family: Arial !important;' +
+                    'font-size: 14px !important;' +
+                '}'
+            );
+        }
 
 	// all selectors
 	var chapterNavigator = utils.getChapterNavigator(), storyTextEl = $('#storytext'), zlists = $('.z-list');
@@ -350,6 +375,9 @@ features = {
             '#zmenu.maxwidth {' +
                 'border-bottom: 1px solid #FFF !important;' +
                 'border-top: none !important;' +
+            '}' +
+            '#zmenu.maxwidth {' +
+                'visibility: hidden !important;' +
             '}' +
             'a,' +
             'a:link,' +
@@ -883,6 +911,7 @@ features = {
 			_innerLoad('colors_complete');
 			_innerLoad('colors_marked_words');
 			_innerLoad('filtersFormat');
+			_innerLoad('textFont');
 			_innerLoad('colorWordCount');
 			_innerLoad('word_count1');
 			_innerLoad('word_count2');
@@ -950,6 +979,7 @@ features = {
 			_innerSet('colors_complete');
 			_innerSet('colors_marked_words');
 			_innerSet('filtersFormat');
+			_innerSet('textFont');
 			_innerSet('colorWordCount');
 			_innerSet('word_count1');
 			_innerSet('word_count2');
@@ -1212,6 +1242,14 @@ features = {
 										'<option' + (settings.filtersFormat === 3 ? ' selected="selected"' : '') + ' value="3">Always visible (top)</option>' +
 									'</select>' +
 								'</div>' +
+								'<div>' +
+									'<label for="ffto-text-font">Text font:</label>' +
+									'<select id="ffto-text-font">' +
+										'<option' + (settings.textFont === 0 ? ' selected="selected"' : '') + ' value="0">Verdana (Default)</option>' +
+										'<option' + (settings.textFont === 1 ? ' selected="selected"' : '') + ' value="1">Calibri</option>' +
+										'<option' + (settings.textFont === 2 ? ' selected="selected"' : '') + ' value="2">Arial</option>' +
+									'</select>' +
+								'</div>' +
 							'</div>' +
 						'</div>' +
 					'</div>' +
@@ -1296,6 +1334,7 @@ features = {
 			settings.colors_complete = $('#ffto-colors-complete').val();
 			settings.colors_marked_words = $('#ffto-colors-marked').val();
 			settings.filtersFormat = utils.parseNum($('#ffto-filters-format')[0].value) || 0;
+			settings.textFont = utils.parseNum($('#ffto-text-font')[0].value) || 0;
 			settings.colorWordCount = $('#ffto-color-word-counts')[0].checked;
 			settings.word_count1 = $('#ffto-words-t1').val();
 			settings.word_count2 = $('#ffto-words-t2').val();
