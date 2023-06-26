@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.76
+// @version       1.7.77
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.77 Test list pages filter adjustments
 // @history       1.7.76 Version number changes
 // @history       1.7.75 Dark Mode changes. Hide font botton in top bar and add font setting into menu. Will add more fonts eventually
 // @history       1.7.74.7 Dark Mode color changes
@@ -235,7 +236,14 @@ function load() {
 				counter.css({'display': 'block'});
 				filtersDiv.append($('#myform')).append(applyButton).append(counter);
 				filtersDiv.prependTo($("#content_parent"));
-			} else { // filters always visible (top)
+			} else if (settings.filtersFormat === 3) { // filters always visible (top)
+				counter.addClass('pull-right');
+				$('#myform .modal-body').css({'padding': '5px'});
+                var filtersDiv = $('<div id="filters" style="text-align: center !important; position: ' + (settings.filtersFormat === 3 ? "sticky" : "relative") + ' !important; background-color: #222 !important; top: 0px !important; z-index: 100;" />');
+                filtersDiv.append($('#myform')).append(applyButton);
+				filtersDiv.prependTo($("#content_parent"));
+                $(counter).prependTo($("#filters"));
+            } else if (settings.filtersFormat === 4) { // filters always visible (top, dont follow)
 				counter.addClass('pull-right');
 				$('#myform .modal-body').css({'padding': '5px'});
 				var filtersDiv = $('<div id="filters" style="text-align: center;" />');
@@ -1012,7 +1020,7 @@ features = {
 				'#menu-fftools { display: inline-block; margin-top: 4px; float: right; text-decoration: none; }' +
 				'#ffto-mask { top: 0; left: 0; width: 100%; height: 100%; position: fixed; opacity: 0.75; background-color: #777; z-index: 5; }' +
 				'#ffto-menu-wrapper { border: 1px solid #CDCDCD; background-color: #F6F7EE; padding: 4px; width: 500px;' +
-				'position: absolute; top: 50px; left: 50%; margin-left: -250px; z-index: 5; }' +
+				'position: absolute; top: 50px; left: 50%; margin-left: -250px; z-index: 100; }' +
 				'#ffto-menu { background-color: white; min-height: 150px; border: 1px solid #CDCDCD; }' +
 				'#ffto-menu .tabs { background-color: #F0F1E6; margin-bottom: 2px; padding-bottom: 2px; }' +
 				'#ffto-menu .tabs > ul { background-color: #F6F7EE; border-bottom: 1px solid #CDCDCD; }' +
@@ -1244,6 +1252,7 @@ features = {
 										'<option' + (settings.filtersFormat === 1 ? ' selected="selected"' : '') + ' value="1">Always visible (right)</option>' +
 										'<option' + (settings.filtersFormat === 2 ? ' selected="selected"' : '') + ' value="2">Always visible (right, don\'t follow)</option>' +
 										'<option' + (settings.filtersFormat === 3 ? ' selected="selected"' : '') + ' value="3">Always visible (top)</option>' +
+										'<option' + (settings.filtersFormat === 4 ? ' selected="selected"' : '') + ' value="4">Always visible (top, don\'t follow)</option>' +
 									'</select>' +
 								'</div>' +
 								'<div>' +
