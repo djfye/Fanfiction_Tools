@@ -377,6 +377,9 @@ features = {
             '.topnav li:last-child {' +
                 'border-bottom: 1px solid #FFF !important;' +
             '}' +
+            '.selection_hl {' +
+                'border-color: #2cb32c !important;' +
+            '}' +
             '#zmenu.maxwidth {' +
                 'border: 1px solid #FFF !important;' +
             '}' +
