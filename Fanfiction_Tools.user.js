@@ -300,7 +300,7 @@ features = {
             '#ffto-menu,' +
             '#ffto-menu .tabs li.active,' +
             '#ffto-menu SELECT,' +
-            '#content_wrapper_inner div select option:checked,' +
+            'select option:checked,' +
             '.tcat,' +
             '.lc,' +
             '.lc-left,' +
@@ -317,7 +317,7 @@ features = {
                 'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
             '}' +
             '#content_parent,' +
-            '#content_wrapper_inner div select option:hover,' +
+            'select option:hover,' +
             '.zmenu,' +
             'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
@@ -332,6 +332,7 @@ features = {
                 'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
             '}' +
             '.btn,' +
+            'select,' +
             '#ffto-buttons INPUT[type=button],' +
             '.xdrop_search,' +
             'textarea,' +
