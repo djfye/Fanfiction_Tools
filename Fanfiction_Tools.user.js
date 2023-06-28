@@ -239,10 +239,10 @@ function load() {
 			} else if (settings.filtersFormat === 3) { // filters always visible (top)
 				counter.addClass('pull-right');
 				$('#myform .modal-body').css({'padding': '5px'});
-                var filtersDiv = $('<div id="filters" style="text-align: center !important; position: ' + (settings.filtersFormat === 3 ? "sticky" : "relative") + ' !important; background-color: #222 !important; top: 0px !important; z-index: 100;" />');
-                filtersDiv.append($('#myform')).append(applyButton);
+				var filtersDiv = $('<div id="filters" style="text-align: center !important; position: ' + (settings.filtersFormat === 3 ? "sticky" : "relative") + ' !important; background-color: #222 !important; top: 0px !important; z-index: 100;" />');
+				filtersDiv.append($('#myform')).append(applyButton);
 				filtersDiv.prependTo($("#content_parent"));
-                $(counter).prependTo($("#filters"));
+				$(counter).prependTo($("#filters"));
             } else if (settings.filtersFormat === 4) { // filters always visible (top, dont follow)
 				counter.addClass('pull-right');
 				$('#myform .modal-body').css({'padding': '5px'});
@@ -300,6 +300,7 @@ features = {
             '#ffto-menu,' +
             '#ffto-menu .tabs li.active,' +
             '#ffto-menu SELECT,' +
+            '#content_wrapper_inner div select option:checked,' +
             '.tcat,' +
             '.lc,' +
             '.lc-left,' +
@@ -316,6 +317,7 @@ features = {
                 'text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;' +
             '}' +
             '#content_parent,' +
+            '#content_wrapper_inner div select option:hover,' +
             '.zmenu,' +
             'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
@@ -376,9 +378,6 @@ features = {
             '}' +
             '.topnav li:last-child {' +
                 'border-bottom: 1px solid #FFF !important;' +
-            '}' +
-            '.selection_hl {' +
-                'border-color: #2cb32c !important;' +
             '}' +
             '#zmenu.maxwidth {' +
                 'border: 1px solid #FFF !important;' +
