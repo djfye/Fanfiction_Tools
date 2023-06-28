@@ -322,6 +322,8 @@ features = {
             'body.yes-fontsmoothing,' +
             '.dropdown-menu,' +
             '#top,' +
+            '#follow_area div,' +
+            '#follow_area .modal-body center table tbody,' +
             '.topnav li ul li.active,' +
             '#ffto-menu .tabs > ul {' +
                 'background-color: #333 !important;' +
