@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.77
+// @version       1.7.78
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.78 Dark mode fixes
 // @history       1.7.77 Test list pages filter adjustments
 // @history       1.7.76 Version number changes
 // @history       1.7.75 Dark Mode changes. Hide font botton in top bar and add font setting into menu. Will add more fonts eventually
@@ -73,8 +74,8 @@ var defaultSettings = {
 	fixLinks: true,		/** Change fake links to real links. [true/false] */
 	darkMode: false,	/** Enable/disable dark mode. [true/false] */
 	allowCtrlA: true,	/** Allow select all with ctrl-a. [true/false] */
-	filtersFormat: 0,	/** Format of the filters. [0/1/2/3] 0: Default, 1: Always visible (right), 2: Always visible (right, don't follow), 3: Always visible (top) */
-	textFont: 0,		/** Font of text. [0/1/2/3/etc] */
+	filtersFormat: 0,	/** Format of the filters. [0/1/2/3/4] 0: Default, 1: Always visible (right), 2: Always visible (right, don't follow), 3: Always visible (top), 4: Always visible (top, don't follow) */
+	textFont: 0,		/** Font of text. [0/1/2/3/etc] 0: Default, 1: Calibri, 2: Arial */
 	colorWordCount: true,	/** Color the word counts. [true/false] */
 	colorDate:  true,	/** Color the dates. [true/false] */
 	colorComplete:  true,	/** Add a unique color to completed stories. [true/false] */
@@ -243,7 +244,7 @@ function load() {
 				filtersDiv.append($('#myform')).append(applyButton);
 				filtersDiv.prependTo($("#content_parent"));
 				$(counter).prependTo($("#filters"));
-            } else if (settings.filtersFormat === 4) { // filters always visible (top, dont follow)
+			} else if (settings.filtersFormat === 4) { // filters always visible (top, dont follow)
 				counter.addClass('pull-right');
 				$('#myform .modal-body').css({'padding': '5px'});
 				var filtersDiv = $('<div id="filters" style="text-align: center;" />');
@@ -306,6 +307,7 @@ features = {
             '.lc-left,' +
             '.lc-wrapper,' +
             '.panel_normal,' +
+            '.panel_warning,' +
             '.table-bordered td,' +
             '#ffto-menu-title,' +
             '#ffto-menu-wrapper {' +
