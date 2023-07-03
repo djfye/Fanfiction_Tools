@@ -398,6 +398,9 @@ features = {
             '.ffto-sect div {' +
                 'padding-top: 5px !important;' +
             '}' +
+            '#content_wrapper_inner > div:first-of-type {' +
+                'background-color: #333' +
+            '}' +
             'a,' +
             'a:link,' +
             'a:active,' +
