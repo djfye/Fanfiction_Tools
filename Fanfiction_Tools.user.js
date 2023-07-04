@@ -403,6 +403,9 @@ features = {
                 'border-left: none !important;' +
                 'border-bottom: none !important;' +
                 'border: solid 1px #cdcdcd !important;' +
+                'padding-left: 5px !important;' +
+                'padding-right: 5px !important;' +
+                'margin-right: -8.5px !important;' +
             '}' +
             'a,' +
             'a:link,' +
