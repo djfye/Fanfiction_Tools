@@ -399,7 +399,7 @@ features = {
                 'padding-top: 5px !important;' +
             '}' +
             '#content_wrapper_inner > div:first-of-type {' +
-                'background-color: #333' +
+                'background-color: #222' +
             '}' +
             'a,' +
             'a:link,' +
