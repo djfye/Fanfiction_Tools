@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Fanfiction Tools
 // @author        Ewino
-// @version       1.7.79
+// @version       1.7.791
 // @description   Enhances fanfiction.net.
 // @icon          https://github.com/djfye/Fanfiction_Tools/raw/master/favicon_2010_iphone.png
 // @namespace     https://github.com/djfye/Fanfiction_Tools
@@ -14,6 +14,7 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @grant         GM_addStyle
+// @history       1.7.791 Revert last version
 // @history       1.7.79 Hide twitter table on homepage
 // @history       1.7.78 Dark mode fixes
 // @history       1.7.77 Test list pages filter adjustments
@@ -407,9 +408,6 @@ features = {
                 'padding-left: 5px !important;' +
                 'padding-right: 5px !important;' +
                 'margin-right: -8.5px !important;' +
-            '}' +
-            '#content_wrapper_inner > table:last-of-type {' +
-                'display: none !important;' +
             '}' +
             'a,' +
             'a:link,' +
